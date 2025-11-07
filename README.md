@@ -14,7 +14,9 @@ TLDR: Press AltGr + letter without diacritics, and you get the letter with Czech
 
 ## Compatibility
 
-Tested on Linux Mint 21
+Tested on:
+- Linux Mint 21
+- Ubuntu 24.04
 
 ## Install
 
