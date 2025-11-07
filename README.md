@@ -18,15 +18,21 @@ Tested on Linux Mint 21
 
 ## Install
 
-Copy layout file:
+### Step 1: Copy Layout File
 ```bash
-$ # You need to copy the `en_haczkoviny` file to the place where the OS will load it.
-$ sudo su
-$ cp en_haczkoviny /usr/share/X11/xkb/symbols/
+# Copy the layout file to system location
+sudo cp en_haczkoviny /usr/share/X11/xkb/symbols/
 ```
 
-Add this layout config:
+### Step 2: Register Layout in XML Database
+Add this layout config to `/usr/share/X11/xkb/rules/evdev.xml`:
+
+```bash
+sudo nano /usr/share/X11/xkb/rules/evdev.xml
 ```
+
+Find the `<layoutList>` section and add (sort alphabetically near English layouts):
+```xml
 <layout>
   <configItem>
     <name>en_haczkoviny</name>
@@ -41,20 +47,28 @@ Add this layout config:
 </layout>
 ```
 
-Into:
-```
-$ sudo vim /usr/share/X11/xkb/rules/evdev.xml
-$ # under XML path: xkbConfigRegistry.layoutList
-$ # you can sort the layout list - so put it near english
+### Step 3: Register Layout in LST Database
+Add to `/usr/share/X11/xkb/rules/evdev.lst`:
+
+```bash
+sudo nano /usr/share/X11/xkb/rules/evdev.lst
 ```
 
-Reload keyboard cache:
+Find the `! layout` section and add:
 ```
+  en_haczkoviny    English (haczkoviny)
+```
+
+### Step 4: Update XKB Cache
+```bash
 sudo dpkg-reconfigure xkb-data
 ```
+
+
 ### Make sure the AltGr is selected
 
 - Ubuntu 24 
+  - settings - Keyboard - Special Character Entry - Alternate Characters Key - Right Alt
 
 ### Use the keyboard layout
 
