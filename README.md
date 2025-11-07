@@ -10,7 +10,7 @@ Created by gr4viton. (I also have a windows version of this keyboard layout, fro
 
 TLDR: Press AltGr + letter without diacritics, and you get the letter with Czech diacritics. Works with shift capital letters too!
 
-![image](mint_hackoviny_2025_05_27.png)
+![image](mint_haczkoviny_2025_05_27.png)
 
 ## Compatibility
 
@@ -20,7 +20,7 @@ Tested on Linux Mint 21
 
 Copy layout file:
 ```bash
-$ # You need to copy the `en_hackoviny` file to the place where the OS will load it.
+$ # You need to copy the `en_haczkoviny` file to the place where the OS will load it.
 $ sudo su
 $ cp en_haczkoviny /usr/share/X11/xkb/symbols/
 ```
